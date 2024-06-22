@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>YouTube Video Results</h1>
+    </header>
+    <div class="container">
+        <h2>Matching Videos</h2>
+        {% for video in videos %}
+        <div class="video-card">
+            <img src="{{ video.thumbnail_url }}" alt="Thumbnail">
+            <div class="card-content">
+                <h3><a href="{{ video.url }}" target="_blank">{{ video.title }}</a></h3>
+                <div class="keywords">
+                    <p><strong>Keywords:</strong></p>
+                    {% for keyword in video.keywords %}
+                    <span>{{ keyword }}</span>
+                    {% endfor %}
+                </div>
+                <p class="sentiment {{ video.sentiment | lower }}"><strong>Sentiment:</strong> {{ video.sentiment }}</p>
+            </div>
+        </div>
+        <a href="{{ url_for('home') }}">Home</a>
+        {% endfor %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>

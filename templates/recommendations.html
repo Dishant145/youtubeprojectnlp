@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Video Recommendations for "{{ video_choice }}"</h1>
+    </header>
+    <div class="container">
+        <h2>Recommended Videos</h2>
+        {% for recommendation in recommendations %}
+        <div class="video-card">
+            <img src="{{ recommendation.thumbnail_url }}" alt="Thumbnail">
+            <div class="card-content">
+                <h3><a href="{{ recommendation.url }}" target="_blank">{{ recommendation.title }}</a></h3>
+                <div class="keywords">
+                    <p><strong>Keywords:</strong></p>
+                    {% for keyword in recommendation.keywords %}
+                    <span>{{ keyword }}</span>
+                    {% endfor %}
+                </div>
+                <p class="sentiment {{ recommendation.sentiment | lower }}"><strong>Sentiment:</strong> {{ recommendation.sentiment }}</p>
+            </div>
+        </div>
+        <a href="{{ url_for('home') }}">Home</a>
+        {% endfor %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>YouTube Video Analysis and Recommendation</h1>
+    <a href="{{ url_for('keyword_search') }}">Keyword Search</a><br>
+    <a href="{{ url_for('video_recommendations') }}">Video Recommendations</a>
+{% endblock %}

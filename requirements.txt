@@ -1,0 +1,9 @@
+pandas
+youtube-transcript-api
+pytube
+nltk
+gensim
+yake
+tensorflow
+scikit-learn
+-e .
