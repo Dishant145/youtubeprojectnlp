@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Video Recommendations{% endblock %}
+
+{% block content %}
+<h1>Video Recommendations</h1>
+<form method="post">
+    <label for="url">Enter YouTube video or playlist URL:</label>
+    <input type="text" id="url" name="url" value="{{ video_url }}" required><br>
+    {% if videos %}
+        <label for="video_choice">Select a video for recommendations:</label>
+        <select id="video_choice" name="video_choice" required>
+            {% for video in videos %}
+                <option value="{{ video }}">{{ video }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Get Recommendations</button>
+    {% else %}
+        <button type="submit">Submit URL to Load Videos</button>
+    {% endif %}
+</form>
+<a href="{{ url_for('home') }}">Home</a>
+{% endblock %}

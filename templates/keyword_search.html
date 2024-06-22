@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Keyword Search{% endblock %}
+
+{% block content %}
+<h1>Keyword Search</h1>
+<form method="post">
+    <label for="url">Enter YouTube video or playlist URL:</label>
+    <input type="text" id="url" name="url" required><br>
+    <label for="keywords">Enter keywords (comma-separated):</label>
+    <input type="text" id="keywords" name="keywords"><br>
+    <button type="submit">Submit</button>
+</form>
+
+{% if videos %}
+    <h2>Matching Videos</h2>
+    {% for video in videos %}
+        <h3>{{ video.title }}</h3>
+        <p><a href="{{ video.url }}">Watch Video</a></p>
+        <p>Keywords: {{ ', '.join(video.keywords) }}</p>
+        <p>Overall Sentiment: {{ video.sentiment }}</p>
+    {% endfor %}
+{% endif %}
+
+<a href="{{ url_for('home') }}">Home</a>
+{% endblock %}
