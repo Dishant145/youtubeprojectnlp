@@ -9,9 +9,3 @@ This repository contains a Flask-based web application that provides keyword sea
 - **Keyword Search**: Search for videos within a playlist based on user-provided keywords.
 - **Video Recommendations**: Get video recommendations based on the content of a chosen video within a playlist.
 
-## Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/yourrepository.git
-   cd yourrepository
