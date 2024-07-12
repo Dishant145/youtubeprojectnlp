@@ -2,7 +2,9 @@
 
 ## Overview
 
-This repository contains a Flask-based web application that provides keyword search and video recommendations for YouTube playlists. It leverages machine learning models to analyze video content and offer relevant suggestions.
+This project is a Flask-based web application that provides keyword search and video recommendations for YouTube playlists. 
+
+
 
 
 
