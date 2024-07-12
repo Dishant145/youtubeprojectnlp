@@ -17,8 +17,7 @@ This project is a Flask-based web application that provides keyword search and v
 
 
 
-![image](https://github.com/user-attachments/assets/daeb8cb2-7914-4b0a-8210-3cb99c478c67)
-
+<img src="[https://your-image-url.type](https://github.com/user-attachments/assets/daeb8cb2-7914-4b0a-8210-3cb99c478c67)" width="700" height="400">
 
 
 ![image](https://github.com/user-attachments/assets/29d9ad3c-9e48-4f7a-9325-95d7c6caafff)
